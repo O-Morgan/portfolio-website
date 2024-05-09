@@ -49,3 +49,271 @@ header {
     color: white;
     text-decoration: none;
 }
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    #navLinks {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-wrapper ul li {
+        text-align: center;
+        width: 100%;
+    }
+
+    header {
+        flex-direction: column;
+        padding: 20px;
+    }
+}
+
+/* Hero Section Styling */
+.hero-section {
+    background-image: url('assets/images/Night Home.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: calc(100vh - 100px); /* Adjusted for header height */
+    display: flex;
+    align-items: flex-start; /* Aligns content to the top */
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding-top: 10%; /* Adds padding to push content down from the top */
+}
+
+.hero-content h1 {
+    font-size: 3.8em;
+    margin-bottom: 0.4em;
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+/* Button Styling */
+button {
+    padding: 10px 20px;
+    background-color: #3498db; /* Sky Blue */
+    border: none;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    #navLinks {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-wrapper ul li {
+        text-align: center;
+        width: 100%;
+    }
+
+    header {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .hero-section {
+        height: calc(100vh - 60px); /* Adjust height based on the header size */
+        padding-top: 20%; /* Increased padding for very small screens */
+    }
+
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .hero-content p {
+        font-size: 1.2em;
+    }
+}
+
+/* About Section Styling */
+.about-section {
+    background-color: #f4f4f4; /* Light grey */
+    padding: 60px 10%;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 60px;
+}
+
+.about-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 60px; /* Adjusted spacing between paragraphs */
+}
+
+.about-rocket {
+    width: 200px; /* Adjust the size as needed */
+    height: 200px; /* Make sure the height is the same as the width for a perfect circle */
+    border-radius: 50%; /* This makes the image circular */
+    display: block; /* Ensures the image does not align with text inline */
+    margin: 50px auto; /* Centers the image horizontally and adds space around it */
+}
+
+/* Project Section Styling */
+.project-section {
+    text-align: center;
+    padding: 60px 10%;
+}
+
+.project-title {
+    font-family: Arial, sans-serif;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.project-descriptions {
+    text-align: center; /* Center the text within the container */
+    background-color: #ffffff; /* Set the background to white */
+    padding: 40px; /* Add padding around the text */
+    margin-bottom: 20px; /* Add some space below the description */
+}
+
+.project-descriptions p {
+    margin: 0; /* Remove margin to align properly within its container */
+    padding: 0; /* Remove padding as the container handles it */
+}
+
+.projects-table {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Use full width of the section */
+    align-items: center; /* Ensure all child elements are centered within the container */
+    justify-content: center; /* Center the items vertically, useful if there's extra space */
+    margin: 0 auto; /* Center the table horizontally within its parent */
+}
+
+.project {
+    width: 100%; /* Each project container spans the full width */
+    margin-bottom: 40px; /* Space between project entries */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.project p {
+    margin-bottom: 20px; /* Increase space between the text and the button */
+}
+
+.project a.button {
+    display: block; /* Make the link block-level so it fills its container */
+    width: 15%; /* Button width is 20% of its container */
+    margin: 0 auto; /* Auto margins for horizontal centering */
+    padding: 10px 0; /* Padding for touch area */
+    background-color: #3498db; /* Button color */
+    color: white; /* Text color */
+    text-align: center; /* Center text */
+    text-decoration: none; /* No underline */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.project a.button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .project a.button {
+        width: 50%; /* Larger percentage for smaller screens */
+        padding: 15px 0; /* Increase padding for better touchability */
+    }
+}
+
+/* Contact Section Styling */
+.contact-section {
+    padding: 30px 10%;
+    background-color: #fff; /* White background for contrast */
+}
+
+.contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.contact-content form {
+    margin-top: 20px;
+}
+
+.contact-content input,
+.contact-content textarea {
+    width: 100%; /* Full width */
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    display: block; /* Stack the form elements */
+}
+
+.contact-content button {
+    margin-top: 20px; /* Space above the button */
+    width: 100%; /* Full width of the form */
+}
+
+.image-container {
+    text-align: center; /* Centers the content horizontally */
+    margin: 10px 0; /* Adds vertical spacing and maintains centering horizontally */
+}
+
+.circular-image {
+    width: 200px; /* Or any other size you prefer */
+    height: 200px; /* Must be the same as width for a perfect circle */
+    border-radius: 50%; /* This makes the image circular */
+    object-fit: cover; /* Ensures the image covers the area perfectly, good for responsive designs */
+    display: inline-block; /* Ensures the image is affected by text-align */
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: white;
+    font-size: 0.8em;
+}
+
+textarea {
+    height: 150px; /* Larger text area for messages */
+}
+
+/* Ensure smooth scrolling to anchor links */
+html {
+    scroll-behavior: smooth;
+}

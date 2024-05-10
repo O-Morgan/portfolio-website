@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14  # Include if you use Node.js in your build, otherwise this can be omitted
+  build:
+    commands:
+      - echo "Nothing needs to be built for a static site"
+  post_build:
+    commands:
+      - echo "Post build stage"
+
+artifacts:
+  files:
+    - '*.html'
+    - '*.css'
+    - '*.js'
+    - 'images/**/*'  # Assuming you have an images directory
+  discard-paths: no
+  base-directory: '.'
+

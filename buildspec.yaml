@@ -3,18 +3,17 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - echo "Prepare any needed operations..."
+      - echo "Pre-build phase"
   build:
     commands:
-      - echo "No build steps required for static content."
+      - echo "Build phase, no actual build commands needed"
   post_build:
     commands:
-      - echo "Post-build operations if any..."
+      - echo "Post-build phase"
 
 artifacts:
   files:
-    - '**/*'
-  discard-paths: yes
-  base-directory: '.'  # Adjust if your files are in a specific directory
-
-
+    - index.html
+    - style.css
+  base-directory: 'path-to-files-if-not-root'  # Modify this if your files are not in the root directory
+  discard-paths: no

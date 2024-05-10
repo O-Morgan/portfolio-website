@@ -1,22 +1,20 @@
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
-      nodejs: 14  # Include if you use Node.js in your build, otherwise this can be omitted
+  pre_build:
+    commands:
+      - echo "Prepare any needed operations..."
   build:
     commands:
-      - echo "Nothing needs to be built for a static site"
+      - echo "No build steps required for static content."
   post_build:
     commands:
-      - echo "Post build stage"
+      - echo "Post-build operations if any..."
 
 artifacts:
   files:
-    - '*.html'
-    - '*.css'
-    - '*.js'
-    - 'images/**/*'  # Assuming you have an images directory
-  discard-paths: no
-  base-directory: '.'
+    - '**/*'
+  discard-paths: yes
+  base-directory: '.'  # Adjust if your files are in a specific directory
+
 

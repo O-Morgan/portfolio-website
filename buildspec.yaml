@@ -3,10 +3,11 @@ version: 0.2
 phases:
   build:
     commands:
-      - echo "Build process complete"
+      - echo "Building project and generating specified artifacts."
 
 artifacts:
   files:
     - index.html
     - style.css
   discard-paths: yes
+  name: BuildArtifact  # This is crucial; it defines the output artifact name.

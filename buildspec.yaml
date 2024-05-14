@@ -1,19 +1,12 @@
 version: 0.2
 
 phases:
-  pre_build:
-    commands:
-      - echo "Pre-build phase"
   build:
     commands:
-      - echo "Build phase, no actual build commands needed"
-  post_build:
-    commands:
-      - echo "Post-build phase"
+      - echo "Build process complete"
 
 artifacts:
   files:
     - index.html
     - style.css
-  base-directory: 'path-to-files-if-not-root'  # Modify this if your files are not in the root directory
-  discard-paths: no
+  discard-paths: yes

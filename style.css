@@ -74,7 +74,7 @@ header {
 
 /* Hero Section Styling */
 .hero-section {
-    background-image: url('https://owen-morgan.s3.eu-west-2.amazonaws.com/Night+Home.jpg');
+    background-image: url('Night Home.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;

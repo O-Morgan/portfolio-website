@@ -49,10 +49,15 @@ header {
     color: white;
     text-decoration: none;
 }
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .nav-toggle {
         display: block;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 1rem;
     }
 
     #navLinks {
@@ -84,7 +89,11 @@ header {
     justify-content: center;
     color: white;
     text-align: center;
-    padding-top: 10%; /* Adds padding to push content down from the top */
+    padding-top: 105px; /* Adds padding to push content down from the top */
+}
+
+.hero-content {
+    margin-top: 20px; /* Additional margin to create a gap under the menu */
 }
 
 .hero-content h1 {
@@ -116,6 +125,10 @@ button:hover {
 @media (max-width: 768px) {
     .nav-toggle {
         display: block;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 1rem;
     }
 
     #navLinks {
@@ -136,7 +149,7 @@ button:hover {
 
     .hero-section {
         height: calc(100vh - 60px); /* Adjust height based on the header size */
-        padding-top: 20%; /* Increased padding for very small screens */
+        padding-top: 100px; /* Increased padding for very small screens */
     }
 
     .hero-content h1 {

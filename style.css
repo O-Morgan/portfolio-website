@@ -15,7 +15,7 @@ html, body {
 header {
     background-color: #151f29;
     color: white;
-    padding: 35px 10%; /* Adjusted padding */
+    padding: 35px 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -35,7 +35,7 @@ header {
     cursor: pointer;
     position: absolute;
     left: 10px;
-    top: 20px; /* Adjusted position */
+    top: 20px;
 }
 
 .nav-wrapper ul {
@@ -72,7 +72,7 @@ header {
 
     header {
         flex-direction: column;
-        padding: 35px; /* Adjusted padding */
+        padding: 35px;
     }
 }
 
@@ -80,19 +80,19 @@ header {
 .hero-section {
     background-image: url('Home page.png');
     background-repeat: no-repeat;
-    background-position: center top; /* Move the image up */
+    background-position: center top;
     background-size: cover;
-    height: calc(100vh - 100px); /* Adjusted for header height */
+    height: calc(100vh - 100px);
     display: flex;
-    align-items: flex-start; /* Aligns content to the top */
+    align-items: flex-start;
     justify-content: center;
     color: white;
     text-align: center;
-    padding-top: 90px; /* Adds padding to push content down from the top */
+    padding-top: 90px;
 }
 
 .hero-content {
-    margin-top: 10px; /* Additional margin to create a gap under the menu */
+    margin-top: 10px;
     position: relative;
     z-index: 2;
 }
@@ -103,7 +103,7 @@ header {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.4); /* Darker overlay */
+    background: rgba(0, 0, 0, 0.4);
     z-index: 1;
 }
 
@@ -136,7 +136,7 @@ button:hover {
 @media (max-width: 768px) {
     .hero-section {
         background-size: cover;
-        padding-top: 120px; /* Adjust padding for very small screens */
+        padding-top: 120px;
     }
 
     .hero-content h1 {
@@ -151,7 +151,7 @@ button:hover {
         display: block;
         position: absolute;
         left: 10px;
-        top: 20px; /* Adjusted position */
+        top: 20px;
     }
 
     #navLinks {
@@ -167,7 +167,7 @@ button:hover {
 
     header {
         flex-direction: column;
-        padding: 35px; /* Adjusted padding */
+        padding: 35px;
     }
 }
 
@@ -276,7 +276,7 @@ button:hover {
 
 /* Contact Section Styling */
 .contact-section {
-    padding: 90px 10% 30px; /* Adjusted padding to move the contact section down */
+    padding: 90px 10% 30px;
     background-color: #fff;
 }
 

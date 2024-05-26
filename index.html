@@ -51,7 +51,7 @@
                     <a href="https://www.techuk.org/resource/bolstering-biometrics-combatting-presentation-attacks-on-business-systems.html" class="button">Tech UK Article</a>
                 </div>
                 <div class="project">
-                    <h3>Project 3:In Progress</h3>
+                    <h3>Project 3: In Progress</h3>
                     <a href="#" class="button">In Progress</a>
                 </div>
             </div>
@@ -74,14 +74,12 @@
             </form>
         </div>
     </main>
-    <!-- Image container with circular astronaut image -->
     <div class="image-container">
         <img src="cartoon astronaut.jpg" alt="Cartoon Astronaut" class="circular-image">
     </div>
     <script>
         function toggleNav() {
             var x = document.getElementById("navLinks");
-            // Toggle display based on current state
             if (x.style.display === "block") {
                 x.style.display = "none";
             } else {
@@ -90,7 +88,6 @@
         }
         document.getElementById('navLinks').addEventListener('click', function(event) {
             if (event.target.tagName === 'A') {
-                // Only hide the nav on mobile views
                 if (window.innerWidth <= 768) {
                     this.style.display = 'none';
                 }
@@ -98,14 +95,12 @@
         });
         window.addEventListener('resize', function() {
             var navLinks = document.getElementById("navLinks");
-            // Adjust visibility based on window width
             if (window.innerWidth > 768) {
-                navLinks.style.display = "flex";  // Always show nav bar in desktop view
+                navLinks.style.display = "flex";
             } else {
-                navLinks.style.display = "none";  // Hide nav bar in mobile view when resized smaller
+                navLinks.style.display = "none";
             }
         });
-        // Ensure correct display on page load based on window size
         document.addEventListener('DOMContentLoaded', function() {
             var navLinks = document.getElementById("navLinks");
             if (window.innerWidth > 768) {

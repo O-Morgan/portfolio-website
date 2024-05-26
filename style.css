@@ -13,16 +13,16 @@ html, body {
 
 /* Header Styling */
 header {
-    background-color: #151f29; /* Dark shade of blue */
+    background-color: #151f29;
     color: white;
-    padding: 20px 10%;
+    padding: 35px 10%; /* Adjusted padding */
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1000; /* Ensures header stays on top of other elements */
+    z-index: 1000;
 }
 
 .nav-toggle {
@@ -34,9 +34,8 @@ header {
     font-size: 20px;
     cursor: pointer;
     position: absolute;
-    left: 10px; /* Ensure the button stays on the left side */
-    top: 50%; /* Vertically center the button */
-    transform: translateY(-50%); /* Adjust for true centering */
+    left: 10px;
+    top: 20px; /* Adjusted position */
 }
 
 .nav-wrapper ul {
@@ -72,29 +71,40 @@ header {
     }
 
     header {
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 0 10%;
+        flex-direction: column;
+        padding: 35px; /* Adjusted padding */
     }
 }
 
 /* Hero Section Styling */
 .hero-section {
-    background-image: url('assets/images/Night Home.jpg');
+    background-image: url('Home page.png');
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center top; /* Move the image up */
     background-size: cover;
     height: calc(100vh - 100px); /* Adjusted for header height */
     display: flex;
-    align-items: center; /* Center content vertically */
+    align-items: flex-start; /* Aligns content to the top */
     justify-content: center;
     color: white;
     text-align: center;
+    padding-top: 90px; /* Adds padding to push content down from the top */
 }
 
 .hero-content {
-    margin-top: 40%; /* Adjusted margin to move the text above the skyscrapers */
+    margin-top: 10px; /* Additional margin to create a gap under the menu */
+    position: relative;
+    z-index: 2;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Darker overlay */
+    z-index: 1;
 }
 
 .hero-content h1 {
@@ -110,7 +120,7 @@ header {
 /* Button Styling */
 button {
     padding: 10px 20px;
-    background-color: #3498db; /* Sky Blue */
+    background-color: #3498db;
     border: none;
     color: white;
     font-size: 1em;
@@ -125,12 +135,8 @@ button:hover {
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .hero-section {
-        background-size: contain; /* Ensure the image covers the section */
-        padding-top: 20%; /* Increased padding for very small screens */
-    }
-
-    .hero-content {
-        margin-top: 50%; /* Further adjust for smaller screens */
+        background-size: cover;
+        padding-top: 120px; /* Adjust padding for very small screens */
     }
 
     .hero-content h1 {
@@ -140,11 +146,34 @@ button:hover {
     .hero-content p {
         font-size: 1.2em;
     }
+
+    .nav-toggle {
+        display: block;
+        position: absolute;
+        left: 10px;
+        top: 20px; /* Adjusted position */
+    }
+
+    #navLinks {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-wrapper ul li {
+        text-align: center;
+        width: 100%;
+    }
+
+    header {
+        flex-direction: column;
+        padding: 35px; /* Adjusted padding */
+    }
 }
 
 /* About Section Styling */
 .about-section {
-    background-color: #f4f4f4; /* Light grey */
+    background-color: #f4f4f4;
     padding: 60px 10%;
 }
 
@@ -162,15 +191,15 @@ button:hover {
 .about-content p {
     font-size: 1.1em;
     line-height: 1.6;
-    margin-bottom: 60px; /* Adjusted spacing between paragraphs */
+    margin-bottom: 60px;
 }
 
 .about-rocket {
-    width: 200px; /* Adjust the size as needed */
-    height: 200px; /* Make sure the height is the same as the width for a perfect circle */
-    border-radius: 50%; /* This makes the image circular */
-    display: block; /* Ensures the image does not align with text inline */
-    margin: 50px auto; /* Centers the image horizontally and adds space around it */
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: block;
+    margin: 50px auto;
 }
 
 /* Project Section Styling */
@@ -186,68 +215,69 @@ button:hover {
 }
 
 .project-descriptions {
-    text-align: center; /* Center the text within the container */
-    background-color: #ffffff; /* Set the background to white */
-    padding: 40px; /* Add padding around the text */
-    margin-bottom: 20px; /* Add some space below the description */
+    text-align: center;
+    background-color: #ffffff;
+    padding: 40px;
+    margin-bottom: 20px;
 }
 
 .project-descriptions p {
-    margin: 0; /* Remove margin to align properly within its container */
-    padding: 0; /* Remove padding as the container handles it */
+    margin: 0;
+    padding: 0;
 }
 
 .projects-table {
     display: flex;
     flex-direction: column;
-    width: 100%; /* Use full width of the section */
-    align-items: center; /* Ensure all child elements are centered within the container */
-    justify-content: center; /* Center the items vertically, useful if there's extra space */
-    margin: 0 auto; /* Center the table horizontally within its parent */
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 .project {
-    width: 100%; /* Each project container spans the full width */
-    margin-bottom: 40px; /* Space between project entries */
+    width: 100%;
+    margin-bottom: 40px;
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 5px;
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 .project p {
-    margin-bottom: 20px; /* Increase space between the text and the button */
+    margin-bottom: 20px;
 }
 
 .project a.button {
-    display: block; /* Make the link block-level so it fills its container */
-    width: 15%; /* Button width is 20% of its container */
-    margin: 0 auto; /* Auto margins for horizontal centering */
-    padding: 10px 0; /* Padding for touch area */
-    background-color: #3498db; /* Button color */
-    color: white; /* Text color */
-    text-align: center; /* Center text */
-    text-decoration: none; /* No underline */
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    display: block;
+    width: 15%;
+    margin: 0 auto;
+    padding: 10px 0;
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 .project a.button:hover {
-    background-color: #2980b9; /* Darker blue on hover */
+    background-color: #2980b9;
 }
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
     .project a.button {
-        width: 50%; /* Larger percentage for smaller screens */
-        padding: 15px 0; /* Increase padding for better touchability */
+        width: 50%;
+        padding: 15px 0;
     }
 }
 
 /* Contact Section Styling */
 .contact-section {
-    padding: 30px 10%;
-    background-color: #fff; /* White background for contrast */
+    padding: 90px 10% 30px; /* Adjusted padding to move the contact section down */
+    background-color: #fff;
 }
 
 .contact-content {
@@ -267,31 +297,31 @@ button:hover {
 
 .contact-content input,
 .contact-content textarea {
-    width: 100%; /* Full width */
+    width: 100%;
     padding: 12px;
     margin-top: 8px;
-    border: 1px solid #ccc; /* Light grey border */
-    border-radius: 4px; /* Rounded borders */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    display: block; /* Stack the form elements */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: block;
 }
 
 .contact-content button {
-    margin-top: 20px; /* Space above the button */
-    width: 100%; /* Full width of the form */
+    margin-top: 20px;
+    width: 100%;
 }
 
 .image-container {
-    text-align: center; /* Centers the content horizontally */
-    margin: 10px 0; /* Adds vertical spacing and maintains centering horizontally */
+    text-align: center;
+    margin: 10px 0;
 }
 
 .circular-image {
-    width: 200px; /* Or any other size you prefer */
-    height: 200px; /* Must be the same as width for a perfect circle */
-    border-radius: 50%; /* This makes the image circular */
-    object-fit: cover; /* Ensures the image covers the area perfectly, good for responsive designs */
-    display: inline-block; /* Ensures the image is affected by text-align */
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: inline-block;
 }
 
 footer {
@@ -304,7 +334,7 @@ footer {
 }
 
 textarea {
-    height: 150px; /* Larger text area for messages */
+    height: 150px;
 }
 
 /* Ensure smooth scrolling to anchor links */

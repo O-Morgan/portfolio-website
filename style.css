@@ -147,6 +147,7 @@ button:hover {
     }
 
     .hero-section {
+        background-size: contain; /* Maintain aspect ratio and clarity */
         height: calc(100vh - 90px); /* Adjust height based on the header size */
         padding-top: 60px; /* Reduced padding for very small screens */
     }

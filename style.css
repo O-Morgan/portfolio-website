@@ -54,10 +54,6 @@ header {
 @media (max-width: 768px) {
     .nav-toggle {
         display: block;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 1rem;
     }
 
     #navLinks {
@@ -89,7 +85,7 @@ header {
     justify-content: center;
     color: white;
     text-align: center;
-    padding-top: 105px; /* Adds padding to push content down from the top */
+    padding-top: 10%; /* Adds padding to push content down from the top */
 }
 
 .hero-content {
@@ -125,10 +121,6 @@ button:hover {
 @media (max-width: 768px) {
     .nav-toggle {
         display: block;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 1rem;
     }
 
     #navLinks {
@@ -149,7 +141,8 @@ button:hover {
 
     .hero-section {
         height: calc(100vh - 60px); /* Adjust height based on the header size */
-        padding-top: 100px; /* Increased padding for very small screens */
+        padding-top: 20%; /* Increased padding for very small screens */
+        background-size: contain; /* Ensure the image is not stretched */
     }
 
     .hero-content h1 {
@@ -317,3 +310,16 @@ footer {
     width: 100%;
     text-align: center;
     padding: 20px 0;
+    background-color: #333;
+    color: white;
+    font-size: 0.8em;
+}
+
+textarea {
+    height: 150px; /* Larger text area for messages */
+}
+
+/* Ensure smooth scrolling to anchor links */
+html {
+    scroll-behavior: smooth;
+}

@@ -33,6 +33,10 @@ header {
     padding: 10px 20px;
     font-size: 20px;
     cursor: pointer;
+    position: absolute;
+    left: 10px; /* Ensure the button stays on the left side */
+    top: 50%; /* Vertically center the button */
+    transform: translateY(-50%); /* Adjust for true centering */
 }
 
 .nav-wrapper ul {
@@ -54,10 +58,6 @@ header {
 @media (max-width: 768px) {
     .nav-toggle {
         display: block;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 1rem;
     }
 
     #navLinks {
@@ -72,16 +72,18 @@ header {
     }
 
     header {
-        flex-direction: column;
-        padding: 20px;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0 10%;
     }
 }
 
 /* Hero Section Styling */
 .hero-section {
-    background-image: url('Future home.jpg');
+    background-image: url('assets/images/Night Home.jpg');
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center;
     background-size: cover;
     height: calc(100vh - 100px); /* Adjusted for header height */
     display: flex;
@@ -92,7 +94,7 @@ header {
 }
 
 .hero-content {
-    margin-top: 20px; /* Additional margin to create a gap under the menu */
+    margin-top: 40%; /* Adjusted margin to move the text above the skyscrapers */
 }
 
 .hero-content h1 {
@@ -127,36 +129,16 @@ button:hover {
         padding-top: 20%; /* Increased padding for very small screens */
     }
 
+    .hero-content {
+        margin-top: 50%; /* Further adjust for smaller screens */
+    }
+
     .hero-content h1 {
         font-size: 2em;
     }
 
     .hero-content p {
         font-size: 1.2em;
-    }
-
-    .nav-toggle {
-        display: block;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 1rem;
-    }
-
-    #navLinks {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .nav-wrapper ul li {
-        text-align: center;
-        width: 100%;
-    }
-
-    header {
-        flex-direction: column;
-        padding: 20px;
     }
 }
 

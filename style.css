@@ -79,17 +79,16 @@ header {
 
 /* Hero Section Styling */
 .hero-section {
-    background-image: url('Night Home.jpg');
+    background-image: url('assets/images/Night Home.jpg');
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center;
     background-size: cover;
     height: calc(100vh - 100px); /* Adjusted for header height */
     display: flex;
-    align-items: flex-start; /* Aligns content to the top */
+    align-items: center; /* Center content vertically */
     justify-content: center;
     color: white;
     text-align: center;
-    padding-top: 105px; /* Adds padding to push content down from the top */
 }
 
 .hero-content {
@@ -123,6 +122,19 @@ button:hover {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
+    .hero-section {
+        background-size: cover; /* Ensure the image covers the section */
+        padding-top: 20%; /* Increased padding for very small screens */
+    }
+
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .hero-content p {
+        font-size: 1.2em;
+    }
+
     .nav-toggle {
         display: block;
         position: absolute;
@@ -145,20 +157,6 @@ button:hover {
     header {
         flex-direction: column;
         padding: 20px;
-    }
-
-    .hero-section {
-        height: calc(100vh - 60px); /* Adjust height based on the header size */
-        padding-top: 20%; /* Increased padding for very small screens */
-        background-size: cover; /* Ensure the image covers the section */
-    }
-
-    .hero-content h1 {
-        font-size: 2em;
-    }
-
-    .hero-content p {
-        font-size: 1.2em;
     }
 }
 

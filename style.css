@@ -78,7 +78,7 @@ header {
 
 /* Hero Section Styling */
 .hero-section {
-    background-image: url('Night Home.jpg');
+    background-image: url('Night Home-high-res.jpg'); /* Ensure this is a high-resolution image */
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -147,7 +147,8 @@ button:hover {
     }
 
     .hero-section {
-        background-size: contain; /* Maintain aspect ratio and clarity */
+        background-image: url('Night Home-mobile.jpg'); /* Use a high-resolution image for mobile */
+        background-size: cover;
         height: calc(100vh - 90px); /* Adjust height based on the header size */
         padding-top: 60px; /* Reduced padding for very small screens */
     }

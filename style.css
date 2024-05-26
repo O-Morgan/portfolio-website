@@ -55,8 +55,7 @@ header {
     .nav-toggle {
         display: block;
         position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+        left: 10px;
         top: 1rem;
     }
 
@@ -73,7 +72,7 @@ header {
 
     header {
         flex-direction: column;
-        padding: 20px;
+        padding: 30px 10%; /* Increased padding for thicker title bar */
     }
 }
 
@@ -83,17 +82,18 @@ header {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    height: calc(100vh - 100px); /* Adjusted for header height */
+    height: calc(100vh - 60px); /* Adjusted for thicker header height */
     display: flex;
     align-items: flex-start; /* Aligns content to the top */
     justify-content: center;
     color: white;
     text-align: center;
-    padding-top: 105px; /* Adds padding to push content down from the top */
+    padding-top: 60px; /* Adds padding to push content down from the top */
+    background-attachment: fixed; /* Ensures the background image covers the entire section */
 }
 
 .hero-content {
-    margin-top: 20px; /* Additional margin to create a gap under the menu */
+    margin-top: 10px; /* Reduced margin to move the content up a bit more */
 }
 
 .hero-content h1 {
@@ -126,8 +126,7 @@ button:hover {
     .nav-toggle {
         display: block;
         position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+        left: 10px;
         top: 1rem;
     }
 
@@ -144,12 +143,12 @@ button:hover {
 
     header {
         flex-direction: column;
-        padding: 20px;
+        padding: 30px 10%; /* Increased padding for thicker title bar */
     }
 
     .hero-section {
-        height: calc(100vh - 60px); /* Adjust height based on the header size */
-        padding-top: 100px; /* Increased padding for very small screens */
+        height: calc(100vh - 90px); /* Adjust height based on the header size */
+        padding-top: 60px; /* Reduced padding for very small screens */
     }
 
     .hero-content h1 {

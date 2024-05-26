@@ -317,16 +317,3 @@ footer {
     width: 100%;
     text-align: center;
     padding: 20px 0;
-    background-color: #333;
-    color: white;
-    font-size: 0.8em;
-}
-
-textarea {
-    height: 150px; /* Larger text area for messages */
-}
-
-/* Ensure smooth scrolling to anchor links */
-html {
-    scroll-behavior: smooth;
-}

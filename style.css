@@ -79,9 +79,9 @@ header {
 
 /* Hero Section Styling */
 .hero-section {
-    background-image: url('assets/images/Night Home.jpg');
+    background-image: url('Night Home.jpg');
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center center;
     background-size: cover;
     height: calc(100vh - 100px); /* Adjusted for header height */
     display: flex;

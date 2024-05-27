@@ -99,6 +99,7 @@ header {
     text-align: center;
     padding: 100px 20px;
     background: #fff;
+    position: relative;
 }
 
 .hero-content {
@@ -122,7 +123,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    gap: 40px;
+    gap: 30px;
 }
 
 .hero-images .image-container {
@@ -151,7 +152,7 @@ header {
     .hero-images {
         flex-direction: row;
         flex-wrap: nowrap;
-        gap: 30px;
+        gap: 10px;
     }
 
     .hero-images .image-container {
@@ -164,6 +165,10 @@ header {
     .hero-images img {
         width: 100%;
         height: auto;
+    }
+
+    .hero-section {
+        padding-top: 120px; /* Adjust this value as needed */
     }
 }
 
@@ -233,13 +238,13 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding-top: 100px;
+    padding-top: 85px;
 }
 
 .project-title {
     font-family: Arial, sans-serif;
     font-size: 2.5em;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .project-descriptions {
@@ -304,13 +309,13 @@ header {
 
 /* Contact Section Styling */
 .contact-section {
-    padding: 60px 10%;
+    padding: 50px 10%;
     background-color: #fff;
-    min-height: calc(100vh - 80px); /* Adjusted height to account for the footer */
+    min-height: calc(100vh - 50px); /* Adjusted height to account for the footer */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding-top: 80px;
+    padding-top: 70px;
 }
 
 .contact-content {
@@ -346,7 +351,7 @@ header {
 
 .image-container {
     text-align: center;
-    margin: 20px 0; /* Added margin */
+    margin: 30px 0; /* Added margin */
 }
 
 .circular-image {

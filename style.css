@@ -15,7 +15,7 @@ html, body {
 header {
     background-color: #151f29;
     color: white;
-    padding: 35px 10%;
+    padding: 15px 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,9 +33,6 @@ header {
     padding: 10px 20px;
     font-size: 20px;
     cursor: pointer;
-    position: absolute;
-    left: 10px;
-    top: 20px;
 }
 
 .nav-wrapper ul {
@@ -44,8 +41,8 @@ header {
 }
 
 .nav-wrapper ul li {
-    margin: 0 30px;
-    font-size: 20px;
+    margin: 0 20px;
+    font-size: 18px;
 }
 
 .nav-wrapper ul li a {
@@ -57,12 +54,20 @@ header {
 @media (max-width: 768px) {
     .nav-toggle {
         display: block;
+        position: absolute;
+        left: 15px;
+        top: 10px;
     }
 
     #navLinks {
         display: none;
         flex-direction: column;
         width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #151f29;
+        padding-top: 50px;
     }
 
     .nav-wrapper ul li {
@@ -72,126 +77,135 @@ header {
 
     header {
         flex-direction: column;
-        padding: 35px;
+        padding: 30px 10%;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    header .nav-toggle {
+        position: absolute;
+        top: 10px;
+        left: 10px;
     }
 }
 
 /* Hero Section Styling */
 .hero-section {
-    background-image: url('Home page.png');
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: cover;
-    height: calc(100vh - 100px);
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     text-align: center;
-    padding-top: 90px;
+    padding: 100px 20px;
+    background: #fff;
 }
 
 .hero-content {
-    margin-top: 10px;
-    position: relative;
-    z-index: 2;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 1;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 .hero-content h1 {
-    font-size: 3.8em;
-    margin-bottom: 0.4em;
+    font-size: 3.5em;
+    margin-bottom: 0.5em;
+    font-family: 'Georgia', serif;
 }
 
 .hero-content p {
-    font-size: 1.5em;
-    margin-bottom: 1em;
+    font-size: 1.8em;
+    margin-bottom: 1.5em;
+    font-family: 'Georgia', serif;
 }
 
-/* Button Styling */
-button {
-    padding: 10px 20px;
-    background-color: #3498db;
-    border: none;
-    color: white;
-    font-size: 1em;
-    cursor: pointer;
-    border-radius: 5px;
+.hero-images {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
 }
 
-button:hover {
-    background-color: #2980b9;
+.hero-images .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex: 1;
+}
+
+.hero-images img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .hero-section {
-        background-size: cover;
-        padding-top: 120px;
-    }
-
     .hero-content h1 {
-        font-size: 2em;
+        font-size: 2.5em;
     }
 
     .hero-content p {
         font-size: 1.2em;
     }
 
-    .nav-toggle {
-        display: block;
-        position: absolute;
-        left: 10px;
-        top: 20px;
+    .hero-images {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 30px;
     }
 
-    #navLinks {
-        display: none;
-        flex-direction: column;
+    .hero-images .image-container {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .hero-images img {
         width: 100%;
+        height: auto;
     }
+}
 
-    .nav-wrapper ul li {
-        text-align: center;
-        width: 100%;
-    }
+.circular-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: inline-block;
+}
 
-    header {
-        flex-direction: column;
-        padding: 35px;
-    }
+.responsive-image {
+    max-width: 100%;
+    height: auto;
 }
 
 /* About Section Styling */
 .about-section {
     background-color: #f4f4f4;
-    padding: 60px 10%;
+    padding: 30px 10%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    padding-top: 30px; /* Adjusted padding to move it under the ribbon */
 }
 
 .about-content {
     max-width: 800px;
     margin: 0 auto;
-    text-align: center;
 }
 
 .about-content h2 {
     font-size: 2.5em;
-    margin-bottom: 60px;
+    margin-bottom: 30px; /* Reduced margin */
 }
 
 .about-content p {
     font-size: 1.1em;
     line-height: 1.6;
-    margin-bottom: 60px;
+    margin-bottom: 30px; /* Reduced margin */
 }
 
 .about-rocket {
@@ -199,13 +213,27 @@ button:hover {
     height: 200px;
     border-radius: 50%;
     display: block;
-    margin: 50px auto;
+    margin: 30px auto;
+}
+
+/* Responsive Adjustments for Rocket Image */
+@media (max-width: 768px) {
+    .about-rocket {
+        margin: 20px auto;
+        width: 200px;
+        height: 200px;
+    }
 }
 
 /* Project Section Styling */
 .project-section {
     text-align: center;
     padding: 60px 10%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 100px;
 }
 
 .project-title {
@@ -276,8 +304,13 @@ button:hover {
 
 /* Contact Section Styling */
 .contact-section {
-    padding: 90px 10% 30px;
+    padding: 60px 10%;
     background-color: #fff;
+    min-height: calc(100vh - 80px); /* Adjusted height to account for the footer */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 80px;
 }
 
 .contact-content {
@@ -313,7 +346,7 @@ button:hover {
 
 .image-container {
     text-align: center;
-    margin: 10px 0;
+    margin: 20px 0; /* Added margin */
 }
 
 .circular-image {
@@ -324,6 +357,13 @@ button:hover {
     display: inline-block;
 }
 
+@media (min-width: 768px) {
+    .image-container {
+        margin-top: 50px; /* Move astronaut image down on larger screens */
+    }
+}
+
+/* Footer Styling */
 footer {
     width: 100%;
     text-align: center;
@@ -331,10 +371,37 @@ footer {
     background-color: #333;
     color: white;
     font-size: 0.8em;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
-textarea {
-    height: 150px;
+/* Star Styling */
+.star-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* So that it doesn't interfere with any interactions */
+    z-index: -1; /* Behind all other elements */
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px white, 0 0 20px white;
+    opacity: 0.8;
+    animation: twinkle 1.5s infinite alternate;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
 }
 
 /* Ensure smooth scrolling to anchor links */

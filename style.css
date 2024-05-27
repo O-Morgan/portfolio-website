@@ -270,22 +270,26 @@ header {
 
 .project {
     width: 100%;
-    margin-bottom: 40px;
+    max-width: 600px; /* Added max-width for centering */
+    margin: 0 auto;
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 5px;
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex; /* Added display flex */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
 }
 
 .project p {
     margin-bottom: 20px;
+    text-align: center; /* Center project description text */
 }
 
 .project a.button {
-    display: block;
-    width: 15%;
-    margin: 0 auto;
+    display: inline-block; /* Change display to inline-block */
+    width: 200px; /* Fixed width for all buttons */
     padding: 10px 0;
     background-color: #3498db;
     color: white;
@@ -294,15 +298,15 @@ header {
     border-radius: 5px;
     transition: background-color 0.3s;
 }
-
 .project a.button:hover {
     background-color: #2980b9;
 }
 
+
 /* Media query for smaller screens */
 @media (max-width: 768px) {
     .project a.button {
-        width: 50%;
+        width: 80%; /* Adjusted width for smaller screens */
         padding: 15px 0;
     }
 }

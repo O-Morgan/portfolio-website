@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="star-container"></div> <!-- Container for stars -->
     <header>
         <button onclick="toggleNav()" class="nav-toggle" aria-expanded="false">Menu</button>
         <div class="nav-wrapper">
@@ -92,7 +91,7 @@
     <footer>
         <p>&copy; <span id="copyright-year">2024</span> Owen Morgan. All rights reserved.</p>
     </footer>
-    
+<!--The toggleNav function is defined to show or hide the navigation menu when the button with the class `nav-toggle` is clicked, the document section hides the navbar if the pixel ratio is equal to or less than 768--> 
     <script>
         function toggleNav() {
             var navLinks = document.getElementById("navLinks");
@@ -126,7 +125,7 @@
                 document.querySelector(".nav-toggle").setAttribute("aria-expanded", "false");
             }
         });
-
+        
         document.addEventListener('DOMContentLoaded', function() {
             var navLinks = document.getElementById("navLinks");
             if (window.innerWidth > 768) {
@@ -135,20 +134,6 @@
             } else {
                 navLinks.style.display = "none";
                 document.querySelector(".nav-toggle").setAttribute("aria-expanded", "false");
-            }
-        });
-
-        // JavaScript to add stars for decoration
-        document.addEventListener('DOMContentLoaded', function() {
-            const starContainer = document.querySelector('.star-container');
-            const starCount = 100; // Number of stars
-
-            for (let i = 0; i < starCount; i++) {
-                const star = document.createElement('div');
-                star.classList.add('star');
-                star.style.top = Math.random() * 100 + 'vh';
-                star.style.left = Math.random() * 100 + 'vw';
-                starContainer.appendChild(star);
             }
         });
     </script>

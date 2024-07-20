@@ -142,51 +142,50 @@ Example of bucket policy:
 
 ## Route 53
 - The CName records created in certificate manager now need configuring. 
-- example.com
-- www.example.com
-1. Go to Route53, edit the record to point to cloudfront.
+1. Go to Route53, edit the record to point to CloudFront.
+   - example.com
+   - www.example.com
 
 ### Configure Code Pipeline 
-1. Go to code pipeline. 
+1. Go to CodePipeline. 
 2. Make sure you are in the correct region.
 3. Create Pipeline.
 4. Name the pipeline.
-5. Artifact store.
-- Select default location. 
-- Select default AWS managed key and hit next.
-6. Source Provider.
-- Github V1. 
-- Connect to Github. 
-- Authorise. 
-- Confirm.
-9. Repository 
-- Select repo link. 
-- Branch = Main.
-- Change detection options, select Github webhook (recommended).
+5. Artifact store:
+   - Select default location.
+   - Select default AWS managed key and hit next.
+6. Source Provider:
+   - Github V1.
+   - Connect to Github.
+   - Authorise.
+   - Confirm.
+7. Repository:
+   - Select repo link.
+   - Branch = Main.
+   - Change detection options, select Github webhook (recommended).
+8. Build provider - This can be supplied (it can be a buildspec.yaml file) I didn't use this.
+   - Deploy Provider = S3.
+   - Region.
+   - Bucket - find your bucket.
+   - Tick extract file before deploy.
+   - No additional configuration - Next
 
-Build provider - This can be supplied (it can be a buildspec.yaml file) I didn't use this. 
+`Create Pipeline`
 
-- Deploy Provider = S3.
-- Region.
-- Bucket - find your bucket. 
-- Tick extract file before deploy.
-- No additional configuration - Next
-`Create Pipeline`  
-
-### Invalidating the cache 
-1. Try changing the code in github using the correct methods i.e. creating an issue, creating a branch and then checking in the change correctly. you will notice the website wont display the changes immediately, this because the content is cached by CloudFront.
+### Invalidating the Cache 
+1. Try changing the code in Github using the correct methods i.e. creating an issue, creating a branch and then checking in the change correctly. You will notice the website won't display the changes immediately, this because the content is cached by CloudFront.
 2. To get around this you need to invalidate the cache.
 3. Go to CloudFront.
-- Invalidations.
-- Create. 
-- /* wildcard mean all files.
-- Refresh and the website and it should now display the changes. 
+   - Invalidations.
+   - Create.
+   - `/*` wildcard mean all files.
+   - Refresh and the website and it should now display the changes.
 
-`All Done` 
+`All Done`
 
-**Note for self** For images and style CSS to work I had to use the relative path, this worked in github when deployed via a local server for testing and it continued to work when deployed via AWS. :smiley: 
+**Note for self:** For images and style CSS to work I had to use the relative path, this worked in Github when deployed via a local server for testing and it continued to work when deployed via AWS. :smiley:
 
-[Markdown Emoji list](https://dev.to/nikolab/complete-list-of-github-markdown-emoji-markup-5aia)
+
 
 
     

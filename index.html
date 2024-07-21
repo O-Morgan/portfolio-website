@@ -20,18 +20,20 @@
     </header>
     
     <main class="hero-section">
-        <div class="hero-content">
-            <h1>Hi, I am Owen!</h1>
-            <p>Welcome to my digital portfolio.</p>
-            <div class="hero-images">
-                <div class="image-container">
-                    <img src="Images/Home Page Me.jpg" alt="Cartoon Owen" class="responsive-image">
-                </div>
-                <div class="image-container">
-                    <img src="Images/Home Page Desk.jpg" alt="Futuristic Workstation" class="responsive-image">
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1>Hi, I am Owen!</h1>
+                <p>Welcome to my digital portfolio.</p>
+                <div class="hero-images">
+                    <div class="image-container">
+                        <img src="Images/Home Page Me.jpg" alt="Cartoon Owen" class="responsive-image">
+                    </div>
+                    <div class="image-container">
+                        <img src="Images/Home Page Desk.jpg" alt="Futuristic Workstation" class="responsive-image">
+                    </div>
                 </div>
             </div>
-        </div>
+        </div>        
     </main>
     
     <main class="about-section" id="about">
@@ -60,8 +62,8 @@
                     <a href="https://www.techuk.org/resource/bolstering-biometrics-combatting-presentation-attacks-on-business-systems.html" class="button">Tech UK Article</a>
                 </div>
                 <div class="project">
-                    <h3>Project 3: In Progress</h3>
-                    <a href="#" class="button">In Progress</a>
+                    <h3>Project 3: Github</h3>
+                    <a href="https://github.com/O-Morgan" class="button">My Github Profile</a>
                 </div>
             </div>
         </div>
@@ -95,30 +97,29 @@
     <!-- Chatbot HTML -->
     <div id="chatbot-toggle" onclick="toggleChatbot()">💬</div>
     <div id="chatbot">
-        <header>
+        <div class="chatbot-header">
             <span>Chatter Box</span>
             <button onclick="minimizeChatbot()" aria-label="Close Chatbot">✖</button>
-        </header>
+        </div>
         <div id="chatbot-messages"></div>
         <div id="chatbot-input">
             <input type="text" id="chatbot-input-field" placeholder="Type a message..." onkeydown="if(event.key === 'Enter') sendMessage()">
             <button onclick="sendMessage()">Send</button>
         </div>
     </div>
-
     <script>
         const messagesDiv = document.getElementById('chatbot-messages');
         const chatbot = document.getElementById('chatbot');
         const chatbotToggle = document.getElementById('chatbot-toggle');
         let initialResponseGiven = false;
-
+    
         function appendMessage(message, sender) {
             const messageElement = document.createElement('div');
             messageElement.textContent = `${sender}: ${message}`;
             messagesDiv.appendChild(messageElement);
             messagesDiv.scrollTop = messagesDiv.scrollHeight;
         }
-
+    
         function sendMessage() {
             const inputField = document.getElementById('chatbot-input-field');
             const userMessage = inputField.value;
@@ -126,49 +127,51 @@
                 appendMessage(userMessage, 'You');
                 inputField.value = '';
                 setTimeout(() => {
-                    if (!initialResponseGiven) {
-                        const initialMessage = "I am a PoC and I will only reply with positive quotes.";
-                        appendMessage(initialMessage, 'Chatter Box');
-                        initialResponseGiven = true;
-                    } else {
-                        const positiveResponses = [
-                            "You're doing great!",
-                            "Keep up the good work!",
-                            "You're amazing!",
-                            "Stay positive!",
-                            "You can achieve anything!",
-                            "The way I see it, if you want the rainbow, you gotta put up with the rain!",
-                            "If you spell Chuck Norris in Scrabble, you win. Forever!",
-                            "Chuck Norris can do a wheelie on a unicycle.",
-                            "Chuck Norris makes onions cry."
-                        ];
-                        const botMessage = positiveResponses[Math.floor(Math.random() * positiveResponses.length)];
-                        appendMessage(botMessage, 'Chatter Box');
-                    }
+                    const positiveResponses = [
+                        "You're doing great!",
+                        "Keep up the good work!",
+                        "You're amazing!",
+                        "Stay positive!",
+                        "You can achieve anything!",
+                        "The way I see it, if you want the rainbow, you gotta put up with the rain!",
+                        "If you spell Chuck Norris in Scrabble, you win. Forever!",
+                        "Chuck Norris can do a wheelie on a unicycle.",
+                        "Chuck Norris makes onions cry."
+                    ];
+                    const botMessage = positiveResponses[Math.floor(Math.random() * positiveResponses.length)];
+                    appendMessage(botMessage, 'Chatter Box');
                 }, 1000);
             }
         }
-
+    
+        function showInitialMessages() {
+            if (!initialResponseGiven) {
+                appendMessage('Hi! How can I help you today?', 'Chatter Box');
+                appendMessage('I am a PoC and I will only reply with positive quotes.', 'Chatter Box');
+                initialResponseGiven = true;
+            }
+        }
+    
         function toggleChatbot() {
             if (chatbot.style.display === "none" || chatbot.style.display === "") {
                 chatbot.style.display = "flex";
                 chatbotToggle.style.display = "none";
-                appendMessage('Hi! How can I help you today?', 'Chatter Box'); // Ensure the welcome message is displayed when toggling the chatbot
+                showInitialMessages();
             } else {
                 chatbot.style.display = "none";
                 chatbotToggle.style.display = "block";
             }
         }
-
+    
         function minimizeChatbot() {
             chatbot.style.display = "none";
             chatbotToggle.style.display = "block";
         }
-
-        // Initial greeting and auto pop-up after 15 seconds
+    
+        // Auto pop-up after 15 seconds
         setTimeout(() => {
             toggleChatbot();
         }, 15000); // 15 seconds
-    </script>
+    </script>                                  
 </body>
 </html>

@@ -95,15 +95,14 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
     text-align: center;
-    padding: 100px 20px;
+    padding: 50px 20px; /* Adjusted padding to move content up */
     background: #fff;
     position: relative;
 }
 
 .hero-content {
-    max-width: 100%;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -121,22 +120,38 @@ header {
 
 .hero-images {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    gap: 20px;
 }
 
 .hero-images .image-container {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    flex: 1;
+    align-items: center;
+    width: 100%;
+    max-width: 45%;
 }
 
 .hero-images img {
     width: 100%;
-    max-width: 500px;
     height: auto;
+}
+
+/* Laptop specific adjustments */
+@media (min-width: 1024px) and (max-width: 1366px) {
+    .hero-section {
+        padding: 70px 5%; /* Adjusted padding to move content up */
+    }
+
+    .hero-content h1 {
+        font-size: 3em;
+    }
+
+    .hero-content p {
+        font-size: 1.5em;
+    }
 }
 
 /* Responsive Adjustments */
@@ -150,25 +165,17 @@ header {
     }
 
     .hero-images {
-        flex-direction: row;
-        flex-wrap: nowrap;
+        flex-direction: row; /* Ensure images stay side by side */
+        flex-wrap: nowrap; /* Prevent wrapping */
         gap: 10px;
     }
 
     .hero-images .image-container {
-        width: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-    }
-
-    .hero-images img {
-        width: 100%;
-        height: auto;
+        width: 45%;
     }
 
     .hero-section {
-        padding-top: 120px; /* Adjust this value as needed */
+        padding-top: 100px; /* Adjust this value as needed */
     }
 }
 
@@ -298,10 +305,10 @@ header {
     border-radius: 5px;
     transition: background-color 0.3s;
 }
+
 .project a.button:hover {
     background-color: #2980b9;
 }
-
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
@@ -388,7 +395,7 @@ header {
     display: none; /* Initially hidden */
 }
 
-#chatbot header {
+.chatbot-header {
     background: #0073e6;
     color: #fff;
     padding: 10px;
@@ -401,10 +408,10 @@ header {
     box-sizing: border-box;
 }
 
-#chatbot header button {
+.chatbot-header button {
     background: none;
     border: none;
-    color: #fff; /* Changed to white */
+    color: #fff;
     font-size: 20px;
     cursor: pointer;
 }
@@ -439,7 +446,7 @@ header {
     position: fixed;
     bottom: 10px;
     right: 10px;
-    background: #ff6600; /* Changed to orange */
+    background: #ff6600;
     color: #fff;
     border: none;
     padding: 10px;
@@ -452,20 +459,21 @@ header {
 @media (max-width: 768px) {
     #chatbot {
         width: 90%;
+        max-width: 300px; /* Ensures a usable size */
         height: 50%;
         bottom: 10px;
-        right: 5%;
-        border-radius: 5px;
+        right: 10px;
+        border-radius: 10px;
     }
 
     #chatbot-toggle {
         bottom: 10px;
-        right: 5%;
+        right: 10px;
         padding: 8px;
         border-radius: 50%;
     }
 
-    #chatbot header {
+    .chatbot-header {
         padding: 8px;
     }
 
@@ -477,7 +485,7 @@ header {
         padding: 8px;
     }
 
-    #chatbot header button {
+    .chatbot-header button {
         font-size: 18px;
     }
 }

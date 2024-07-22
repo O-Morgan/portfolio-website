@@ -432,6 +432,7 @@ header {
     padding: 10px;
     border: none;
     border-bottom-left-radius: 10px;
+    font-size: 16px; /* Ensure the font size is at least 16px to prevent zooming */
 }
 
 #chatbot-input button {
@@ -440,6 +441,7 @@ header {
     border: none;
     padding: 10px;
     border-bottom-right-radius: 10px;
+    font-size: 16px; /* Ensure the font size is at least 16px to match the input */
 }
 
 #chatbot-toggle {

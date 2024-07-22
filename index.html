@@ -20,20 +20,18 @@
     </header>
     
     <main class="hero-section">
-        <div class="hero-section">
-            <div class="hero-content">
-                <h1>Hi, I am Owen!</h1>
-                <p>Welcome to my digital portfolio.</p>
-                <div class="hero-images">
-                    <div class="image-container">
-                        <img src="Images/Home Page Me.jpg" alt="Cartoon Owen" class="responsive-image">
-                    </div>
-                    <div class="image-container">
-                        <img src="Images/Home Page Desk.jpg" alt="Futuristic Workstation" class="responsive-image">
-                    </div>
+        <div class="hero-content">
+            <h1>Hi, I am Owen!</h1>
+            <p>Welcome to my digital portfolio.</p>
+            <div class="hero-images">
+                <div class="image-container">
+                    <img src="Images/Home Page Me.jpg" alt="Cartoon Owen" class="responsive-image">
+                </div>
+                <div class="image-container">
+                    <img src="Images/Home Page Desk.jpg" alt="Futuristic Workstation" class="responsive-image">
                 </div>
             </div>
-        </div>        
+        </div>
     </main>
     
     <main class="about-section" id="about">
@@ -62,8 +60,8 @@
                     <a href="https://www.techuk.org/resource/bolstering-biometrics-combatting-presentation-attacks-on-business-systems.html" class="button">Tech UK Article</a>
                 </div>
                 <div class="project">
-                    <h3>Project 3: Github</h3>
-                    <a href="https://github.com/O-Morgan" class="button">My Github Profile</a>
+                    <h3>Project 3: In Progress</h3>
+                    <a href="#" class="button">In Progress</a>
                 </div>
             </div>
         </div>
@@ -107,19 +105,20 @@
             <button onclick="sendMessage()">Send</button>
         </div>
     </div>
+
     <script>
         const messagesDiv = document.getElementById('chatbot-messages');
         const chatbot = document.getElementById('chatbot');
         const chatbotToggle = document.getElementById('chatbot-toggle');
-        let initialResponseGiven = false;
-    
+        let initialResponseGiven = localStorage.getItem('initialResponseGiven') === 'true';
+
         function appendMessage(message, sender) {
             const messageElement = document.createElement('div');
             messageElement.textContent = `${sender}: ${message}`;
             messagesDiv.appendChild(messageElement);
             messagesDiv.scrollTop = messagesDiv.scrollHeight;
         }
-    
+
         function sendMessage() {
             const inputField = document.getElementById('chatbot-input-field');
             const userMessage = inputField.value;
@@ -127,51 +126,104 @@
                 appendMessage(userMessage, 'You');
                 inputField.value = '';
                 setTimeout(() => {
-                    const positiveResponses = [
-                        "You're doing great!",
-                        "Keep up the good work!",
-                        "You're amazing!",
-                        "Stay positive!",
-                        "You can achieve anything!",
-                        "The way I see it, if you want the rainbow, you gotta put up with the rain!",
-                        "If you spell Chuck Norris in Scrabble, you win. Forever!",
-                        "Chuck Norris can do a wheelie on a unicycle.",
-                        "Chuck Norris makes onions cry."
-                    ];
-                    const botMessage = positiveResponses[Math.floor(Math.random() * positiveResponses.length)];
-                    appendMessage(botMessage, 'Chatter Box');
+                    if (!initialResponseGiven) {
+                        const initialMessage = "I am a PoC and I will only reply with positive quotes.";
+                        appendMessage(initialMessage, 'Chatter Box');
+                        initialResponseGiven = true;
+                        localStorage.setItem('initialResponseGiven', 'true');
+                    } else {
+                        const positiveResponses = [
+                            "You're doing great!",
+                            "Keep up the good work!",
+                            "You're amazing!",
+                            "Stay positive!",
+                            "You can achieve anything!",
+                            "The way I see it, if you want the rainbow, you gotta put up with the rain!",
+                            "If you spell Chuck Norris in Scrabble, you win. Forever!",
+                            "Chuck Norris can do a wheelie on a unicycle.",
+                            "Chuck Norris makes onions cry."
+                        ];
+                        const botMessage = positiveResponses[Math.floor(Math.random() * positiveResponses.length)];
+                        appendMessage(botMessage, 'Chatter Box');
+                    }
                 }, 1000);
             }
         }
-    
+
         function showInitialMessages() {
-            if (!initialResponseGiven) {
-                appendMessage('Hi! How can I help you today?', 'Chatter Box');
-                appendMessage('I am a PoC and I will only reply with positive quotes.', 'Chatter Box');
-                initialResponseGiven = true;
-            }
+            appendMessage('Hi! How can I help you today?', 'Chatter Box');
+            appendMessage('I am a PoC and I will only reply with positive quotes.', 'Chatter Box');
+            initialResponseGiven = true;
+            localStorage.setItem('initialResponseGiven', 'true');
         }
-    
+
         function toggleChatbot() {
             if (chatbot.style.display === "none" || chatbot.style.display === "") {
                 chatbot.style.display = "flex";
                 chatbotToggle.style.display = "none";
-                showInitialMessages();
+                if (!initialResponseGiven) {
+                    showInitialMessages();
+                }
             } else {
                 chatbot.style.display = "none";
                 chatbotToggle.style.display = "block";
             }
         }
-    
+
         function minimizeChatbot() {
             chatbot.style.display = "none";
             chatbotToggle.style.display = "block";
         }
-    
-        // Auto pop-up after 15 seconds
+
+        // Initial greeting and auto pop-up after 15 seconds
         setTimeout(() => {
             toggleChatbot();
         }, 15000); // 15 seconds
-    </script>                                  
+
+        // Toggle navigation for mobile view
+        function toggleNav() {
+            var navLinks = document.getElementById("navLinks");
+            var navToggle = document.querySelector(".nav-toggle");
+            if (navLinks.style.display === "block") {
+                navLinks.style.display = "none";
+                navToggle.setAttribute("aria-expanded", "false");
+            } else {
+                navLinks.style.display = "block";
+                navToggle.setAttribute("aria-expanded", "true");
+            }
+        }
+
+        document.querySelectorAll('#navLinks a').forEach(link => {
+            link.addEventListener('click', function() {
+                var navLinks = document.getElementById("navLinks");
+                if (window.innerWidth <= 768) {
+                    navLinks.style.display = 'none';
+                    document.querySelector(".nav-toggle").setAttribute("aria-expanded", "false");
+                }
+            });
+        });
+
+        window.addEventListener('resize', function() {
+            var navLinks = document.getElementById("navLinks");
+            if (window.innerWidth > 768) {
+                navLinks.style.display = "flex";
+                document.querySelector(".nav-toggle").setAttribute("aria-expanded", "true");
+            } else {
+                navLinks.style.display = "none";
+                document.querySelector(".nav-toggle").setAttribute("aria-expanded", "false");
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var navLinks = document.getElementById("navLinks");
+            if (window.innerWidth > 768) {
+                navLinks.style.display = "flex";
+                document.querySelector(".nav-toggle").setAttribute("aria-expanded", "true");
+            } else {
+                navLinks.style.display = "none";
+                document.querySelector(".nav-toggle").setAttribute("aria-expanded", "false");
+            }
+        });
+    </script>
 </body>
 </html>

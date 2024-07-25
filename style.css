@@ -270,6 +270,7 @@ header {
 .project-descriptions p {
     margin: 0;
     padding: 0;
+    margin-bottom: 20px; /* Adjust spacing for consistency */
 }
 
 .projects-table {
@@ -349,6 +350,11 @@ header {
 
     .project {
         width: 90%; /* Ensure project content is centered and responsive */
+    }
+
+    .github-link img.github-icon {
+        width: 40px; /* Shrink the GitHub icon on smaller screens */
+        height: 40px; /* Shrink the GitHub icon on smaller screens */
     }
 }
 

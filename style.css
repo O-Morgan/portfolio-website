@@ -169,6 +169,7 @@ header {
         flex-direction: row;
         flex-wrap: nowrap;
         gap: 10px;
+        justify-content: center; /* Center the images horizontally */
     }
 
     .hero-images .image-container {
@@ -177,24 +178,14 @@ header {
 
     .hero-section {
         padding-top: 80px; /* Adjust this value as needed */
+        display: flex;
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content vertically */
     }
 
     .hero-images {
         margin-top: -30px; /* Adjust this value to move images up or down */
     }
-}
-
-.circular-image {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    display: inline-block;
-}
-
-.responsive-image {
-    max-width: 100%;
-    height: auto;
 }
 
 /* About Section Styling */
@@ -318,6 +309,16 @@ header {
     .project a.button {
         width: 80%;
         padding: 15px 0;
+    }
+
+    .project-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center the project content */
+    }
+
+    .project {
+        width: 90%; /* Ensure project content is centered and responsive */
     }
 }
 

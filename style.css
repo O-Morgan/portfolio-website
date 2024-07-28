@@ -145,21 +145,6 @@ header {
     object-fit: contain;
 }
 
-/* Laptop specific adjustments */
-@media (min-width: 1024px) and (max-width: 1366px) {
-    .hero-section {
-        padding: 70px 5%;
-    }
-
-    .hero-content h1 {
-        font-size: 3em;
-    }
-
-    .hero-content p {
-        font-size: 1.5em;
-    }
-}
-
 /* Adjustments for large screens */
 @media (min-width: 1024px) {
     .hero-content {
@@ -190,7 +175,7 @@ header {
     }
 
     .hero-images .image-container {
-        width: 45%;
+        width: 45%; /* Slightly increase the width */
     }
 
     .hero-section {
@@ -215,16 +200,20 @@ header {
     align-items: center;
     text-align: center;
     padding-top: 30px;
+    position: relative; /* Added for rocket positioning */
 }
 
 .about-content {
     max-width: 800px;
     margin: 0 auto;
+    position: relative; /* Added for rocket positioning */
 }
 
 .about-content h2 {
     font-size: 2.5em;
     margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
 }
 
 .about-content p {
@@ -233,19 +222,24 @@ header {
     margin-bottom: 30px;
 }
 
+.rocket-image-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
 .about-rocket {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    display: block;
-    margin: 30px auto;
 }
 
 @media (max-width: 768px) {
-    .about-rocket {
-        margin: 20px auto;
-        width: 150px; /* Shrink the about image */
-        height: 150px; /* Shrink the about image */
+    .about-rocket,
+    .circular-image {
+        width: 150px; /* Shrink the about and circular images */
+        height: 150px; /* Shrink the about and circular images */
     }
 }
 
@@ -258,12 +252,15 @@ header {
     flex-direction: column;
     justify-content: flex-start;
     padding-top: 30px; /* Adjust this value as needed */
+    position: relative;
 }
 
 .project-title {
     font-family: Arial, sans-serif;
     font-size: 2.5em;
     margin-bottom: 30px; /* Match the spacing of the About Me section */
+    position: relative;
+    display: inline-block;
 }
 
 .project-descriptions {
@@ -336,8 +333,8 @@ header {
 }
 
 .github-link img.github-icon {
-    width: 50px;  /* Adjust the width to make it larger */
-    height: 50px;  /* Adjust the height to make it larger */
+    width: 50px;  /* Adjust the width to make it slightly larger */
+    height: 50px;  /* Adjust the height to make it slightly larger */
     transition: opacity 0.3s;
     display: inline-block;
     margin: 0 auto;
@@ -365,8 +362,8 @@ header {
     }
 
     .github-link img.github-icon {
-        width: 40px; /* Shrink the GitHub icon on smaller screens */
-        height: 40px; /* Shrink the GitHub icon on smaller screens */
+        width: 55px; /* Slightly increase the size */
+        height: 55px; /* Slightly increase the size */
     }
 }
 
@@ -379,17 +376,21 @@ header {
     flex-direction: column;
     justify-content: flex-start;
     padding-top: 70px;
+    position: relative;
 }
 
 .contact-content {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
+    position: relative;
 }
 
 .contact-content h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
 }
 
 .contact-content form {
@@ -412,27 +413,20 @@ header {
     width: 100%;
 }
 
-.image-container {
-    text-align: center;
-    margin: 30px 0;
-}
-
 .circular-image {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
-    display: inline-block;
+    display: block;
+    margin: 20px auto; /* Center the image */
 }
 
 @media (max-width: 768px) {
-    .image-container {
-        margin-top: 50px;
-    }
-    
+    .about-rocket,
     .circular-image {
-        width: 150px; /* Shrink the contact image */
-        height: 150px; /* Shrink the contact image */
+        width: 150px; /* Shrink the about and circular images */
+        height: 150px; /* Shrink the about and circular images */
     }
 }
 

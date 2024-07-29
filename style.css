@@ -11,6 +11,11 @@ html, body {
     height: 100%;
 }
 
+/* Background Enhancements */
+body {
+    background: linear-gradient(to right, #ece9e6, #ffffff); /* Subtle gradient background */
+}
+
 /* Header Styling */
 header {
     background-color: #151f29;
@@ -97,10 +102,11 @@ header {
     align-items: center;
     text-align: center;
     padding: 60px 20px;
-    background: #fff;
+    background: #ffffff; /* Changed to plain white background */
     position: relative;
     min-height: 100vh;
     justify-content: center; /* Center content vertically */
+    padding-bottom: 100px; /* Extra space for decorative elements */
 }
 
 .hero-content {
@@ -113,12 +119,14 @@ header {
     font-size: 3.5em;
     margin-bottom: 0.5em;
     font-family: 'Georgia', serif;
+    animation: fadeInDown 1s ease-in-out;
 }
 
 .hero-content p {
     font-size: 1.8em;
     margin-bottom: 1em;
     font-family: 'Georgia', serif;
+    animation: fadeInUp 1s ease-in-out;
 }
 
 .hero-images {
@@ -143,6 +151,45 @@ header {
     height: auto;
     max-width: 300px; /* Further reduced max width for images */
     object-fit: contain;
+    border: none; /* Remove any border */
+    padding: 0; /* Remove any padding */
+}
+
+/* Add Decorative Elements */
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background: url('images/decorative-element.png') no-repeat center center;
+    background-size: contain;
+    transform: translateX(-50%);
+    opacity: 0.5; /* Slight transparency */
+}
+
+/* Keyframes for animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Adjustments for large screens */
@@ -175,7 +222,7 @@ header {
     }
 
     .hero-images .image-container {
-        width: 45%; /* Slightly increase the width */
+        width: 60%; /* Increase the width */
     }
 
     .hero-section {
@@ -187,6 +234,10 @@ header {
 
     .hero-images {
         margin-top: 10px; /* Adjust as needed to move images up */
+    }
+
+    .hero-images img {
+        max-width: 250px; /* Increase the max width */
     }
 }
 
@@ -369,8 +420,8 @@ header {
 
 /* Contact Section Styling */
 .contact-section {
+    background-color: #f4f4f4; /* Match the about section's background color */
     padding: 50px 10%;
-    background-color: #fff;
     min-height: calc(100vh - 50px);
     display: flex;
     flex-direction: column;
@@ -411,6 +462,18 @@ header {
 .contact-content button {
     margin-top: 20px;
     width: 100%;
+    background-color: #3498db; /* Blue background color */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    padding: 12px 20px; /* Add padding */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.contact-content button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
 }
 
 .circular-image {
@@ -556,13 +619,4 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-}
-
-@keyframes twinkle {
-    0% { opacity: 0.5; }
-    100% { opacity: 1; }
-}
-
-html {
-    scroll-behavior: smooth;
 }
